@@ -15,6 +15,7 @@ void Player::giveMoney(unsigned amount)
 unsigned Player::takeMoney(unsigned amount)
 {
     unsigned takenMoney = std::min(money, amount);
+
     money -= takenMoney;
     return takenMoney;
 }

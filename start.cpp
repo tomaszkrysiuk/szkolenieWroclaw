@@ -5,7 +5,12 @@ Start::Start()
 
 }
 
-void Start::enter(Player &enteringPlayer)
+void Start::pass(Player &enteringPlayer)
+{
+    enteringPlayer.giveMoney(400);
+}
+
+void Start::leave(Player &enteringPlayer)
 {
     enteringPlayer.giveMoney(400);
 }

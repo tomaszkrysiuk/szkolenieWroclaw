@@ -1,18 +1,17 @@
 #pragma once
-#include <array>
-#include <memory>
 
+#include <vector>
+#include "board.h"
 
-class Square;
+using Players = std::vector<Player>;
 
-template<unsigned N = 40>
 class Game
 {
+    Game(Board board, Players players);
 
 private:
 
-    using Board = std::array<std::unique_ptr<Square>, N>;
-
     Board board;
+    Players players;
 };
 

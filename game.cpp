@@ -1,7 +1,6 @@
-#include "board.h"
+#include "game.h"
 
-Board::Board()
+Game::Game(Board board, Players players) : board(board), players(players)
 {
 
 }
-
