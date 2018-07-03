@@ -4,3 +4,8 @@ Game::Game(Board board, Players players) : board(board), players(players)
 {
 
 }
+
+void Game::play()
+{
+
+}

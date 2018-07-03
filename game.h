@@ -8,7 +8,10 @@ using Players = std::vector<Player>;
 
 class Game
 {
+public:
     Game(Board board, Players players);
+    void play();
+
 
 private:
 
