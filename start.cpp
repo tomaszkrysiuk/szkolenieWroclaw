@@ -1,17 +1,13 @@
 #include "start.h"
+#include "player.h"
 
-Start::Start()
+void Start::pass(Player &passingPlayer)
 {
-
+    passingPlayer.giveMoney(400);
 }
 
-void Start::pass(Player &enteringPlayer)
+void Start::leave(Player &leavingPlayer)
 {
-    enteringPlayer.giveMoney(400);
-}
-
-void Start::leave(Player &enteringPlayer)
-{
-    enteringPlayer.giveMoney(400);
+    leavingPlayer.giveMoney(400);
 }
 

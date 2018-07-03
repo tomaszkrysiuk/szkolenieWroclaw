@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-
-class Square;
+#include "square.h"
 
 using Board = std::vector<Square>;

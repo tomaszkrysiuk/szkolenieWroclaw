@@ -5,9 +5,8 @@ RailStation::RailStation()
 
 }
 
-void RailStation::enter(Player &enteringPlayer)
+void RailStation::enter(Player &)
 {
-    if(isOwned())
-        takeMoney(enteringPlayer);
+
 }
 
