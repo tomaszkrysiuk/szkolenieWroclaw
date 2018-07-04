@@ -1,10 +1,11 @@
 #pragma once
-#include "square.h"
+#include "buyablesquare.h"
 
-class RailStation : public Square
+class RailStation : public BuyableSquare
 {
 public:
     RailStation();
-    void enter(Player& enteringPlayer);
+    unsigned getPrice() override;
+    unsigned getFee() override;
 };
 

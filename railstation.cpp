@@ -5,8 +5,12 @@ RailStation::RailStation()
 
 }
 
-void RailStation::enter(Player &)
+unsigned RailStation::getFee()
 {
-
+    return 100;
 }
 
+unsigned RailStation::getPrice()
+{
+    return 10;
+}

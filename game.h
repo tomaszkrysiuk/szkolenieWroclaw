@@ -4,7 +4,7 @@
 #include "board.h"
 #include "player.h"
 
-using Players = std::vector<Player>;
+using Players = std::vector<std::shared_ptr<Player>>;
 
 class Game
 {
@@ -14,7 +14,6 @@ public:
 
 
 private:
-
     Board board;
     Players players;
 };
