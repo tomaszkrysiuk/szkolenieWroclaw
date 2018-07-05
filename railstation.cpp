@@ -1,16 +1,11 @@
 #include "railstation.h"
 
-RailStation::RailStation()
-{
-
-}
-
 unsigned RailStation::getFee()
 {
-    return 100;
+    return 99;
 }
 
 unsigned RailStation::getPrice()
 {
-    return 10;
+    return 100;
 }

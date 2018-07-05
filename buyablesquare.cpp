@@ -1,13 +1,12 @@
 #include "buyablesquare.h"
 
 
-void BuyableSquare::enter(Player& enteringPlayer)
+void BuyableSquare::onEnter(Player& enteringPlayer)
 {
-    if(hasOwner())
+    if(owner)
         chargeFee(enteringPlayer);
     else
-        if(enteringPlayer.proposePurchase(this))
-            owner = std::experimental::make_optional(&enteringPlayer);
+        proposePurchase(enteringPlayer);
 }
 
 void BuyableSquare::chargeFee(Player& playerToCharge)
@@ -17,7 +16,19 @@ void BuyableSquare::chargeFee(Player& playerToCharge)
         (*owner)->giveMoney(playerToCharge.takeMoney(fee));
 }
 
-bool BuyableSquare::hasOwner()
+void BuyableSquare::proposePurchase(Player& enteringPlayer)
 {
-    return not owner;
+    if(enteringPlayer.proposePurchase(this))
+        owner = std::experimental::make_optional(&enteringPlayer);
 }
+
+void BuyableSquare::iOwnYou(Player& newOwner)
+{
+    owner = &newOwner;
+}
+
+void BuyableSquare::free()
+{
+    owner = std::experimental::optional<Player*>();
+}
+

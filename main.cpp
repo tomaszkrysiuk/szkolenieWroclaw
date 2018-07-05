@@ -4,14 +4,30 @@
 #include "bot.h"
 #include "railstation.h"
 #include "game.h"
+#include "start.h"
 
 
+Board buildBoard();
+Players createPlayers();
 
 int main()
 {
-    Board board;
-    board.appendSquare(std::make_unique<RailStation>());
-    Game game(std::move(board), {std::make_shared<Bot>(100), std::make_shared<Bot>(100)});
+    Game game(buildBoard(), createPlayers());
     game.play();
     return 0;
+}
+
+Board buildBoard()
+{
+    Board board;
+    board.appendSquare(std::make_unique<Start>());
+    board.appendSquare(std::make_unique<RailStation>());
+
+    return board;
+}
+
+Players createPlayers()
+{
+    return {std::make_shared<Bot>("Player1", 99),
+            std::make_shared<Bot>("Player2", 99)};
 }

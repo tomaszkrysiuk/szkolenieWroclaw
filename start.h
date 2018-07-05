@@ -6,8 +6,7 @@ class Player;
 class Start : public Square
 {
 public:
-    void enter(Player& enteringPlayer) override;
-    void pass(Player &passingPlayer) override;
-    void leave(Player &leavingPlayer) override;
+    void onPass(Player &passingPlayer) override;
+    void onLeave(Player &leavingPlayer) override;
 };
 

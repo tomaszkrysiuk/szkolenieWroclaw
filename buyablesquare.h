@@ -7,9 +7,12 @@
 class BuyableSquare : public Square
 {
 public:
-    void enter(Player& enteringPlayer) override;
-    virtual unsigned getPrice() = 0;
+    BuyableSquare(std::string name) : Square(name){}
+    void onEnter(Player& enteringPlayer) override;
 
+    virtual unsigned getPrice() = 0;
+    void iOwnYou(Player& newOwner);
+    void free();
 private:
     virtual unsigned getFee() = 0;
 
