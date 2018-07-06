@@ -12,7 +12,7 @@ void BuyableSquare::onEnter(Player& enteringPlayer)
 void BuyableSquare::chargeFee(Player& playerToCharge)
 {
     auto fee = getFee();
-    if(owner)
+    if(owner)//todo
         (*owner)->giveMoney(playerToCharge.takeMoney(fee));
 }
 

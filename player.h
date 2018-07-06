@@ -25,6 +25,7 @@ protected:
 private:
 
     using ActOfOwnership = BuyableSquare*;
+
     bool haveEnoughMoneyToPay(unsigned price);
     void buy(BuyableSquare* squareToBuy);
     void bankrupt();
